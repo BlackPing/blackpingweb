@@ -1,0 +1,108 @@
+.Layout1
+{
+  width: 860px;
+  height: 250px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.Layout2
+{
+  width: 1020px;
+  padding: 0px 0px 100px 50px;
+  margin: 0px 0px 200px 50px;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: left;
+
+  border-left: 10px solid;
+  border-bottom: 10px solid;
+}
+
+.Layout2 .Text-Line1
+{
+  width: 0px;
+  margin: 0px 0px 10px 0px;
+  padding: 20px 500px 0px 0px;
+  border-bottom: 1px solid;
+}
+
+.Layout2 .Text-Line2
+{
+  width: 0px;
+  margin: 0px 0px 10px 0px;
+  padding: 20px 500px 0px 0px;
+  border-bottom: 2px solid;
+}
+
+.Layout2 .Text-Line3
+{
+  width: 0px;
+  margin: 0px 0px 10px 0px;
+  padding: 20px 500px 0px 0px;
+  border-bottom: 3px solid;
+}
+
+.Layout2 .cred
+{
+  color: red;
+  font-weight: 900;
+}
+
+.Layout2 .cblue
+{
+  color: blue;
+  font-weight: 900;
+}
+
+.Content
+{
+  padding: center;
+  list-style: none;
+}
+
+.Content li
+{
+  width: 140px;
+  height: 20px;
+  background: black;
+  color: white;
+  white-space: nowrap;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid;
+  font-family: 'Jua', sans-serif;
+}
+
+.Text-title
+{
+  margin-bottom: 50px;
+  border-bottom: 1px solid;
+  font-family: 'Jua', sans-serif;
+  font-size: 40px;
+}
+
+#mtitle-text-menu
+{
+  list-style: none;
+}
+
+#mtitle-text-menu li a
+{
+  background-color: black;
+  color:white;
+  text-decoration:none
+}
+
+.box1
+{
+  size: auto;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid;
+}
+
+.sourcebox
+{
+  width: 500px;
+  border: 1px solid;
+}

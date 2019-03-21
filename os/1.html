@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="운영체제 기초">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <title>OS</title>
+
+    <style type="text/css">
+      #grid
+      {
+        display:grid;
+        grid-template-columns: 150px 1fr;
+      }
+    </style>
+    <input class="Up" type="button" onclick="$('html, body').stop().animate( { scrollTop : '100' } );" value="▲" style="position: fixed; bottom: 20px; right: 30px"></input> <!--Up Bar-->
+  </head>
+  <body>
+    <h1 class="BASENAME">OS</h1>
+    <h1 class="MIDNAME">Web Page Created Language HTML CSS JAVASCRIPT</h1>
+    <div id="grid">
+      <a id="logo" href="../1.html"></a>
+      <div class="title-bar">
+        <ul id="title-text-menu">
+          <script src="../MainMenu.js" type="text/javascript"></script>
+          <script type="text/javascript">
+            var mSelect = 0;
+            for(var i = 0; i < menuList.length; i++)
+            {
+              if(mSelect == i)
+                document.write('<li><a style="color:black; background:White; text-decoration:none" href="../'+menuLink[i]+'">'+menuList[i]+'</a></li>');
+              else
+                document.write('<li><a style="color:white; background:black; text-decoration:none" href="../'+menuLink[i]+'">'+menuList[i]+'</a></li>');
+            }
+          </script>
+        </ul>
+      </div>
+
+      <div class="sub-bar"></div>
+
+      <div class="Layout1"></div>
+
+      <ul class="Content">
+        <script type="text/javascript">
+          var smSelect = 0;
+        </script>
+        <script src= "./SubMenu.js" type="text/javascript"></script>
+      </ul>
+
+      <div class="Layout2">
+        <div style="white-space:nowrap">
+          <div class="Text-title">
+            <script type="text/javascript">
+              document.write(subList[smSelect]);
+            </script>
+          </div>
+          <div class="cred">OS(Operating System)</div> 컴퓨터 하드웨어에 설치된 소프트웨어<br>
+          운영 체제는 여러 프로그램을 동시에 수행하기 위해 사용하는 일종의 프로그램이다.<br><br>
+          모든 프로그램은 컴퓨터 시스템에서 수행되려면 메모리에 적재 되어야 한다.<br>
+          따라서 운영체제는 항상 필요한 부분만 메모리에 적재시키고 필요한 부분만 따로<br>
+          메모리에 적재시키는 방식으로 메모리를 관리하는데.<br>
+          이때 메모리에 항상 적재된 운영 체제를 커널(kernel)이라고 부른다.<br><br>
+          <div class="cred">운영 체제의 기능</div>
+          기존 컴퓨터 시스템은 일반인이 사용하기에는 복잡한 방식을 사용한다<br>
+          하지만 운영체제 소프트웨어가 컴퓨터 시스템에 적재되면서 일반인도 쉽게 사용을 할 수 있게 됐다.<br><br>
+          컴퓨터 시스템에는 자원이라는게 존재하는데<br>
+          자원은 하드웨어, 소프트웨어 두 가지의 자원을 공통적으로 부르는 말이다.<br>
+          CPU, 메모리, 하드 디스크 등<br><br>
+          운영 체제는 이 자원들을 효율적으로 사용을 할 수 있게 도와주는데<br>
+          이러한 특성 때문에 자원 관리자(resouce management) 라고도 부른다<br>
+          자원 관리는 대표적으로 CPU 스케줄링 기법을 이용한다.<br><br>
+          또한 우리가 사용하는 윈도우즈에서는 별도의 설정을 하지 않으면 프로그램을 실행 할 경우 경고문 혹은 알림 같은게 나오게되는데<br>
+          이는 운영 체제가 스스로 보호하는 역할중 하나 이다.<br>
+          <div class="Text-Line2"></div>
+          컴퓨터 시스템내의 자원을 효율적으로 관리<br>
+          편리한 환경 제공<br>
+          운영 체제 보안<br>
+          <div class="Text-Line1"></div><br>
+          <div class="cred">운영 체제 분류</div>
+          초기에 나왔던 단일 작업(single tasking)<br>
+          현재에 사용되는 다중 작업(multi tasking)<br><br>
+          두 가지로 나누어 볼 수 있다.<br>
+          단일 작업은 하나의 프로그램이 수행되는 동안 다른 프로그램을 수행하지 못한다.<br>
+          다중 작업은 하나 이상의 프로그램이 동시에 수행될 수 있다.<br>
+          단일 작업은 CPU가 하나의 프로그램을 집중적으로 처리하는 반면에<br>
+          다중 작업은 CPU의 빠른 처리 속도로 짧은 시간의 규모로 여러 프로그램을 처리함<br>
+          이러한 특징을 가지는 다중 작업을 시분할 시스템이라고 부른다.<br><br>
+          그 외로 CPU를 2개 가지는 다중처리기 시스템<br>
+          메모리 공간을 분할해서 다중 작업을 하는 다중 프로그래밍 시스템이 존재한다.<br><br>
+          <div class="cred">실시간 운영 체제</div>
+          경성 실시간 시스템(hard realtime system)<br>
+          - 계산의 정확성뿐만 아니라 시간 제약이 엄격히 준수되어야 하는 실시간 시스템<br><br>
+          연성 실시간 시스템(soft realtime system)<br>
+          - 시간 제약이 중요하지만 준수되지 못하더라도 시스템의 기능 수행이 가능한 실시간 시스템<br>
+          <div class="Text-Line1"></div>
+          CPU : 중앙처리장치, 컴퓨터의 정중앙에서 모든 데이터를 처리함<br>
+          메모리(Memory) : 기억 장치(저장 장치)
+          <div class="Text-Line1"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ending">
+    BLACKPAGE<br>
+    by coding black_ping<br>
+    email - bug_ping@naver.com
+    </div>
+  </body>
+
+</html>

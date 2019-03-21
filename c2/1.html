@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="C# 기초">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <title>C#</title>
+
+    <style type="text/css">
+      #grid
+      {
+        display:grid;
+        grid-template-columns: 150px 1fr;
+      }
+    </style>
+    <input class="Up" type="button" onclick="$('html, body').stop().animate( { scrollTop : '100' } );" value="▲" style="position: fixed; bottom: 20px; right: 30px"></input> <!--Up Bar-->
+  </head>
+  <body>
+    <h1 class="BASENAME">C#</h1>
+    <h1 class="MIDNAME">Web Page Created Language HTML CSS JAVASCRIPT</h1>
+    <div id="grid">
+      <a id="logo" href="../1.html"></a>
+      <div class="title-bar">
+        <ul id="title-text-menu">
+          <script src="../MainMenu.js" type="text/javascript"></script>
+          <script type="text/javascript">
+            var mSelect = 5;
+            for(var i = 0; i < menuList.length; i++)
+            {
+              if(mSelect == i)
+                document.write('<li><a style="color:black; background:White; text-decoration:none" href="../'+menuLink[i]+'">'+menuList[i]+'</a></li>');
+              else
+                document.write('<li><a style="color:white; background:black; text-decoration:none" href="../'+menuLink[i]+'">'+menuList[i]+'</a></li>');
+            }
+          </script>
+        </ul>
+      </div>
+
+      <div class="sub-bar"></div>
+
+      <div class="Layout1"></div>
+
+      <ul class="Content">
+        <script type="text/javascript">
+          var smSelect = 0;
+        </script>
+        <script src= "./SubMenu.js" type="text/javascript"></script>
+      </ul>
+
+      <div class="Layout2">
+        <div style="white-space:nowrap">
+          <div class="Text-title">
+            <script type="text/javascript">
+              document.write(subList[smSelect]);
+            </script>
+          </div>
+          원래 C# 이란 공부를 언제 할 것인가 계획을 잡았었습니다.<br>
+          하지만 계획의 이전 단계 <strong>"자료구조라도 끝내고 시작하자"</strong><br>
+          제가 정한 일부분의 계획이었는데 지키지 못했네요.<br>
+          아마 이건 제 의지가 부족한것도 있으며 머리가 좋지 않은것도 한 몫했을 겁니다.<br><br>
+          그래도 그냥 한번 부딪혀보려고 합니다. 가만히 있는 거보다는 무엇이라도 하는 게 좋지 않겠습니까<br>
+          이 글을 봐주시는 분이 얼마나 될지는 모르겠지만. 차례대로 차근차근<br>
+          같이 공부가 됐으면 합니다.<br><br>
+          저는 C# 의 공부를 "이것이 C#이다" 라는 책을 보면서 할 생각이며, 이 문서도 책의 기반이 될것같습니다.<br><br>
+          <span class="cred">프로그래밍</span><br>
+          항상 프로그래밍책을 보게 되면 프로그래밍의 역사부터 알려주는데<br>
+          다시 봐도 처음보는 내용같습니다.<br><br>
+          뭐 실제로 프로그래밍의 역사를 안다고해서 프로그래밍을 더 잘하는건 아니니깐요.<br>
+          단지 프로그래밍이라는 배경과 프로그래밍의 존재 목적만 알면 된다고 생각합니다.<br><br>
+          컴퓨터는 명령을 통해서 움직입니다. 그리고 이 명령을 내리기 위해서는 기계어로 전달을 해줘야 하죠.<br>
+          하지만 이 기계어는 소수의 사람을 제외하고는 사용을 할 수 없었죠.<br>
+          그 만큼 어려웠고 우리가 알던 언어와의 개념과는 많이 다르니깐요.<br>
+          그래서 이 기계어를 사람이 쉽게 이해 할 수 있도록 프로그래밍 언어라는게 탄생하게 됐습니다.<br>
+          그 시작은 <span class="cred">어셈블리어(Assembly)</span><br>
+          이 프로그래밍 언어라는건 단지 언어이며 컴퓨터는 실제로 이 언어를 이해 하지 못합니다.<br>
+          그래서 프로그래밍 언어를 기계어로 변환하는 작업을 <span class="cred">컴파일(Compile)</span>이라고 합니다.<br><br>
+          <img src="image01.png"></img><br>
+          어셈블리어로 코드를 작성 후 컴파일러(Compiler)라는 소프트웨어를 사용해 실행 파일로 만듭니다.<br>
+          이 실행 파일을 프로그램(Program)이라 부르죠<br><br>
+          현재 제일 알려진 소프트웨어는 당연 Visual Studio겠죠.<br>
+          그 외 Dev C++과 같은 소프트웨어도 있고요.<br><br>
+          <img src="image02.png"></img><br><br>
+          <div class="cred">C# 이란</div>
+          C# 은 C++를 계승한다는 의미로 붙혀진 이름입니다.<br>
+          하지만 실제로 C++의 코드를 C# 에 적용하진 못합니다.<br><br>
+          단지 닷넷(.net)을 위한 언어라고 보면 되겠네요.<br>
+          그렇다 해도 다른 언어들도 닷넷을 사용 할 수 있습니다.<br>
+          그렇다면 C# 은 굳이? 닷넷을 위해 만들어진 이유가 없지 않나요?<br><br>
+          파이썬이나 C++은 닷넷을 활용할 수 있지만<br>
+          C# 만큼 닷넷을 사용하기에 효율적으론 사용을 하지 못합니다.<br>
+          그 이유는 당연히 프로그래밍 언어의 목적이 다르니깐요.<br><br>
+          C++은 객체 지향을 중점으로 만들어진 언어이며<br>
+          C# 은 닷넷을 생각하고 만들어진 언어니깐요.<br>
+        </div>
+      </div>
+    </div>
+    <div class="ending">
+    BLACKPAGE<br>
+    by coding black_ping<br>
+    email - bug_ping@naver.com
+    </div>
+  </body>
+
+</html>

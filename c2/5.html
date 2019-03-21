@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="C# 자료형">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../highlight/vs.css">
+    <script src="../highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>C#</title>
+
+    <style type="text/css">
+      #grid
+      {
+        display:grid;
+        grid-template-columns: 150px 1fr;
+      }
+    </style>
+    <input class="Up" type="button" onclick="$('html, body').stop().animate( { scrollTop : '100' } );" value="▲" style="position: fixed; bottom: 20px; right: 30px"></input> <!--Up Bar-->  
+  </head>
+  <body>
+    <h1 class="BASENAME">C#</h1>
+    <h1 class="MIDNAME">Web Page Created Language HTML CSS JAVASCRIPT</h1>
+    <div id="grid">
+      <a id="logo" href="../1.html"></a>
+      <div class="title-bar">
+        <ul id="title-text-menu">
+          <script src="../MainMenu.js" type="text/javascript"></script>
+          <script type="text/javascript">
+            var mSelect = 5;
+            for(var i = 0; i < menuList.length; i++)
+            {
+              if(mSelect == i)
+                document.write('<li><a style="color:black; background:White; text-decoration:none" href="../'+menuLink[i]+'">'+menuList[i]+'</a></li>');
+              else
+                document.write('<li><a style="color:white; background:black; text-decoration:none" href="../'+menuLink[i]+'">'+menuList[i]+'</a></li>');
+            }
+          </script>
+        </ul>
+      </div>
+
+      <div class="sub-bar"></div>
+
+      <div class="Layout1"></div>
+
+      <ul class="Content">
+        <script type="text/javascript">
+          var smSelect = 4;
+        </script>
+        <script src= "./SubMenu.js" type="text/javascript"></script>
+      </ul>
+
+      <div class="Layout2" style="white-space:nowrap>">
+        <div class="Text-title">
+          <script type="text/javascript">
+            document.write(subList[smSelect]);
+          </script>
+        </div>
+        <div class="cred" style="font-size:25px">정수 자료형</div><br>
+        모든 언어는 자료형이 존재하고 C# 만의 자료형이 있습니다.<br>
+        그 중 정수 계열의 자료형을 보겠습니다.<br><br>
+        <img src="./5/image01.png"></img><br><br>
+        새로운 자료형이 보이시나요? C++ 을 하셨다면 새로운 자료형이 생긴걸 알 수 있습니다.<br><br>
+        1바이트 (2 ^ 8)의 값을 가지는 byte와 sbyte<br>
+        두 자료형의 차이점은 부호를 가지고 있느냐 없느냐 입니다.<br>
+        그럼 조금만 더 내려가서 ushort를 보도록 할까요?<br>
+        short인데 앞에 u가 붙었습니다. 하지만 자료형의 크기를 보면<br>
+        많이 보던 형태죠. unsigned 가 생각 나지 않나요?<br>
+        자료형의 표현에 부호를 표시 하지 않고 오로지 부호없는 값을 나타내게 도와주는 키워드 입니다.<br><br>
+        눈치가 빠르신 분이라면 알아채셨을 텐데요. u는 unsigned의 약자입니다.<br>
+        정말 편해졌네요 이제 일일이  unsigned 안 붙여도 됩니다.<br><br>
+        이렇게 보면 아쉬운 점이 하나 있는데 byte도 차라리 ubyte로 해줬으면<br>
+        얼마나 좋았을까요 정말 아쉬운 부분입니다.<br><br>
+        그리고 char이 보이시나요? C++ 에서는 1바이트였는데 C# 에서는 2바이트군요.<br><br>
+        <img src="./5/image02.png"></img><br><br>
+        그리고 C# 은 정말 좋은 기능이 하나 있군요. 해당 자료형의 크기를 넘어가는 값을 넣어줄려고 하면 문법 오류가 납니다.<br>
+        하지만 실제로 오버플로우를 발생시킬 경우도 한번 봐야겠네요.<br><br>
+<div class="sourcebox"><pre><code class="lang c">using System;
+using static System.Console;
+
+namespace CSharp
+{
+  class HelloWorld
+  {
+      static void Main(string[] arg)
+      {
+          int a = int.MaxValue;
+          Console.WriteLine($"{a}");
+
+          a = a + 1;
+          Console.WriteLine($"{a}");
+
+          return;
+      }
+  }
+}</code></pre></div><br>
+        <img src="./5/image03.png"></img><br><br>
+        강제로 오버플로우를 일으켰을 때 값은 저희가 알던 오버플로우 그대로군요.<br><br>
+        그리고 오버플로우란 단어를 처음 접한 분들이 있을텐데<br>
+        오버플로우(Overflow) 혹은 오버플로라고 하죠.<br>
+        사전적 의미는 넘치다라는 의미를 가졌는데요.<br>
+        그 의미처럼 자료형의 크기를 넘으면 넘쳐서 제일 작은 값으로 넘어가게됩니다.<br>
+        그리고 오버플로우의 반대되는 언더플로우도 존재하죠.<br>
+        언더플로우는 오버플로우의 반대 없는걸 넣으려해서 제일 큰값으로 넘어가죠<br><br>
+        예를 들자면 이렇습니다.<br><br>
+        <img src="./5/image04.png"></img><br><br>
+        자료형의 숫자들은 순환을 합니다. 이때 범위를 넘어서면<br>
+        오버플로우 혹은 언더플로우가 발생하는거죠.<br><br>
+<div class="sourcebox"><pre><code>using System;
+using static System.Console;
+
+namespace CSharp
+{
+  class HelloWorld
+  {
+      static void Main(string[] arg)
+      {
+          byte a = 50;
+          sbyte b = 127;
+
+          Console.WriteLine($"{a} {b}");
+
+          int c = 1_000_000;
+          Console.WriteLine($"{c}");
+
+          return;
+      }
+  }
+}</code></pre></div>
+        <img src="./5/image05.png"></img><br><br>
+        C# 은 해보면 해볼수록 정말 편의성이 좋아졌습니다.<br>
+        자릿수의 구분을 위해 _(언더 스코어)를 사용 할 수 있네요.<br><br>
+<div class="sourcebox"><pre><code>using System;
+using static System.Console;
+
+namespace CSharp
+{
+  class HelloWorld
+  {
+      static void Main(string[] arg)
+      {
+          byte a = 0b1111_0000;
+          byte b = 0XF0;
+
+          Console.WriteLine($"{a} {b}");
+
+          int c = 0x1234_abcd;
+          Console.WriteLine($"{c}");
+
+          return;
+      }
+  }
+}</code></pre></div><br>
+        <img src="./5/image06.png"></img><br><br>
+        그리고 리터럴값을 10진수 말고도 2진수와 16진수를 해도 값이 출력이 됩니다.<br>
+        2진수는 0b를 맨 앞에 붙여줘야 합니다. 16진수는 0x<br><br>
+        <div class="cred">정수 자료형 정리</div>
+        _ 로 자릿수의 구분이 가능하다.<br>
+        리터럴 값을 2진수와 16진수로 표현이 가능하다.<br>
+        음수의 표현 방식은 2의 보수법을 사용한다.<br>
+        char은 정수 계열의 자료형이지만 문자 데이터이다.<br><br>
+        부호 없는 정수 : byte, ushort, uint, ulong<br>
+        부호 있는 정수 : sbyte, short, int, long<br><br>
+        <div class="cred" style="font-size: 25px">부동 소수 자료형</div>
+        <img src="./5/image07.png"></img><br>
+        아 참 그리고 부동이란 뜻이 여기선 움직이지 않는 다는 뜻이 아닙니다.<br>
+        오히려 떠서 움직인다는 뜻을 가집니다. 부동 소수점이라는 이름은<br>
+        소수점이 고정되어 있지 않고 움직이면서 수를 표현한다는 뜻에<br>
+        부동 소수점이라고 이름이 붙여진겁니다.<br><br>
+        float와 double은 많이 보셨을겁니다. 하지만 C# 에선 새롭게<br>
+        decimal이라는 새로운 자료형이 생겼군요<br>
+        무려 크기도 16바이트.. 정말 엄청난 양의 수를 표현할 수 있습니다.<br>
+        그리고 부동 소수 자료형에는 특징이 있는데요.<br>
+        float a = 3.14f 이렇게 맨 뒤에 정해진 알파뱃을 넣어 줘야합니다.<br>
+        double b = 3.14<br>
+        decimal c = 3.14m<br><br>
+        float는 f, double은 안붙여줘도 됩니다, decimal은<br>
+        그리고 이 자료형들의 구분하는 방법은 매우 쉽습니다.<br>
+        그냥 자릿수를 얼마나 표현 할 수 있는가.<br><br>
+<div class="sourcebox"><pre><code>using System;
+using static System.Console;
+
+namespace CSharp
+{
+  class HelloWorld
+  {
+      static void Main(string[] arg)
+      {
+          float a = 3.1415_9265_3589_7932_3846f;
+          double b = 3.1415_9265_3589_7932_3846;
+          decimal c = 3.1415_9265_3589_7932_3846m;
+
+          Console.WriteLine($"{a}\n{b}\n{c}");
+
+          return;
+      }
+  }
+}</code></pre></div>
+        <img src="./5/image08.png"></img><br>
+        <img src="./5/image09.png"></img><br><br>
+        그리고 만약 형식이 맞지 않는다면 이렇게 문법 오류가 납니다.<br><br>
+        <div class="cred">부동 소수점 자료형 정리</div>
+        자료형의 구분은 정밀도(자릿수)로 구분이 가능하다.<br>
+        리터널 값은 형식에 맞게 지정해줘야 한다.<br><br>
+
+        <div class="cred" style="font-size: 25px">문자 형식 자료형</div>
+        <strong>char</strong><br>
+        정수 계열의 자료형이지만 문자를 나타내는 자료형이기도 합니다.<br>
+        C++ 을 하셨던 분이라면 어떤 역할을 하는지 아실겁니다.<br>
+        하지만 크기가 무려 2바이트죠<br>
+<div class="sourcebox"><pre><code>using System;
+using static System.Console;
+
+namespace CSharp
+{
+    class HelloWorld
+    {
+        static void Main(string[] arg)
+        {
+            char a = 'a';
+            int b = (int)a;
+            char c = char.MaxValue;
+            int d = (int)c;
+
+            Console.WriteLine($"{a}\n{b}\n{c}\n{d}");
+
+            return;
+        }
+    }
+}</code></pre></div><br>
+        <img src="./5/image15.png"></img><br><br>
+        <p>그리고 이 문자의 리터럴 값 그러니깐 문자를 넣을때는
+        단 한문자만 가능하며 '(작은 따옴표)로 감싸줘야 합니다.</p>
+        C++ 에서는 한글은 안됐었는데 C# 은 됩니다.<br><br>
+        <img src="./5/image16.png"></img><br><br>
+        <div class="sourcebox"><pre><code>using System;
+using static System.Console;
+
+namespace CSharp
+{
+    class HelloWorld
+    {
+        static void Main(string[] arg)
+        {
+            char a = '하';
+            char b = '이';
+
+            Console.Write(a);
+            Console.WriteLine(b);
+
+            return;
+        }
+    }
+}</code></pre></div><br>
+        <img src="./5/image17.png"></img><br><br>
+        <p><div class="cred" style="font-size: 25px">문자열 형식 자료형</div>
+          char은 문자만 가능했지 한 변수로 이어서 문자를 표현하지 못했습니다.<br>
+          이를 가능케 해주는게 string 문자열 형식 자료형입니다.</p>
+        <img src="./5/image18.png"></img><br><br>
+<div class="sourcebox"><pre><code>using System;
+using static System.Console;
+
+namespace CSharp
+{
+    class HelloWorld
+    {
+        static void Main(string[] arg)
+        {
+            string data = "Hello World";
+
+            Console.WriteLine(data);
+
+            return;
+        }
+    }
+}</code></pre></div><br>
+        <img src="./5/image19.png"></img><br>
+        <p>string은 리터럴 값에 "(큰 따옴표)를 감싸줘야합니다.</p>
+        <p><div class="cred" style="font-size: 25px">bool</div>
+        C 에서는 구경도 못했던 bool 자료형<br>
+        C++ 에서 넘어오고 생기고 C# 에서도 마찬가지로 bool 자료형이 있습니다.<br>
+        크기는 1바이트(8비트)입니다.<br>
+        다만 한가지 다른점이 있다면 C++ 에서는 0과 1로 표현이 됐습니다.<br>
+        하지만 C# 에서는 True와 False 그대로 표현을 합니다.
+        </p>
+<div class="sourcebox"><pre><code>using System;
+using static System.Console;
+
+namespace CSharp
+{
+    class HelloWorld
+    {
+        static void Main(string[] arg)
+        {
+            bool result = true;
+
+            Console.WriteLine(result);
+
+            if(result == true)
+                Console.WriteLine("true");
+
+            result = false;
+
+            Console.WriteLine(result);
+
+            if (result == false)
+                Console.WriteLine("false");
+
+            return;
+        }
+    }
+}</code></pre></div><br>
+        <img src="./5/image20.png" alt="bool 자료형"><br><br>
+        <p><div class="cred" style="font-size: 25px">object 자료형</div>
+        이 object 자료형은 C++ 에서는 auto와 비슷한 역할을 할 수 있습니다.<br><br>
+        이 object는 어떠한 자료형이 될 수 있습니다.<br>
+        이 원리는 상속을 이용했다고 합니다.<br><br>
+        C# 에서는 object가 모든 데이터 형식을 다룰 수 있도록<br>
+        모든 데이터 형식의 조상을 object로 지정했으며<br>
+        자동으로 object형식에서 상속을 받게 했습니다.</p>
+        <img src="./5/image21.png" alt="object 자료형">
+        <p>그래서 object는 어떤 형식의 데이터라도 object로 처리가 가능하죠.</p>
+        <div class="sourcebox"><pre><code>using System;
+using static System.Console;
+
+namespace CSharp
+{
+    class HelloWorld
+    {
+        static void Main(string[] arg)
+        {
+            object t_bool = true;
+            Console.WriteLine(t_bool);
+
+            object t_int = 1234_1234;
+            Console.WriteLine(t_int);
+
+            object t_double = 3.141592653589793238462643383279;
+            Console.WriteLine(t_double);
+
+            object t_char = 'b';
+            Console.WriteLine(t_char);
+
+            object t_string = "호우";
+            Console.WriteLine(t_string);
+
+            return;
+        }
+    }
+}</code></pre></div>
+        <img src="./5/image22.png" alt="object 자료형"><br>
+        <p>object 자료형 정말 대단합니다.</p>
+        <p><div class="cred" style="font-size: 25px">박싱과 언박싱</div>
+        이 object의 메커니즘은 박싱과 언박싱의 원리를 이용합니다.<br><br>
+        이전 포스팅에서 스택과 힙에대해서 알아 봤었죠.<br>
+        값 형식은 스택에 참조 형식은 힙에<br><br>
+        일반적인 변수는 값 형식이라서 스택에 들어갑니다.<br>
+        하지만 object는 참조 형식이라서 힙을 사용하죠.<br><br>
+        하지만 이 참조 형식에 값 형식을 담는다니 이는 형 변환과 비슷한 방식인데요.<br>
+        형 변환은 간단하게 설명하자면 int형을 double형으로 바꾸는 행위 같은걸 말합니다.</p>
+        <div class="sourcebox"><pre><code>int a = 3.14;
+double b = (double)a;</code></pre></div>
+        <p>이러한 원리처럼 object는 값 형식을 힙에 할당하기 위해 박싱(boxing)이라는 기능을 사용합니다.</p>
+        <img src="./5/image23.png" alt="object 자료형"><br>
+        <p>박싱이란 스택에 있는 a를 힙에 참조해주는 역할을 합니다. 이 때 다른 변수에 넣는 행위를 하면</p>
+        <img src="./5/image24.png" alt="object 자료형"><br>
+        <p>힙에 참조된 메모리 공간에서 값을 꺼내 참조로 사용했던 a가 b에 값을 넣어줍니다. 이 과정을 언박싱이라고 합니다.</p>
+        <div class="sourcebox"><pre><code>object a = 15;
+int b = (int)a;</code></pre></div><br>
+        <div class="sourcebox"><pre><code>int pen = 1;
+object box = (object)pen; // 펜을 박스에 박싱해서 힙에 넣음
+int body = (int)box; // box에 담긴 값을 언박싱해서 스택에 저장
+
+int x = 15;
+object y = x; // object 형식에 저장할 때 형변환을 하지 않으면
+// 암시적으로 object 형식으로 변환</code></pre></div><br>
+        <p>좀더 쉽게 설명을 하자면 object 형변환을 사용하는 행위는 박싱이고<br>
+        박싱이 된 object 형변환을 값 형식으로 형변환을 하는 행위가 언박싱<br>
+        이 차이만 안다면 박싱과 언박싱은 충분히 이해하셨을겁니다.</p>
+      </div> <!--layout2 end-->
+    </div>
+    <div class="ending">
+    BLACKPAGE<br>
+    by coding black_ping<br>
+    email - bug_ping@naver.com
+    </div>
+  </body>
+
+</html>

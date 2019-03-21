@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="C# 기초">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../highlight/vs.css">
+    <script src="../highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>C#</title>
+
+    <style type="text/css">
+      #grid
+      {
+        display:grid;
+        grid-template-columns: 150px 1fr;
+      }
+    </style>
+    <input class="Up" type="button" onclick="$('html, body').stop().animate( { scrollTop : '100' } );" value="▲" style="position: fixed; bottom: 20px; right: 30px"></input> <!--Up Bar-->
+  </head>
+  <body>
+    <h1 class="BASENAME">C#</h1>
+    <h1 class="MIDNAME">Web Page Created Language HTML CSS JAVASCRIPT</h1>
+    <div id="grid">
+      <a id="logo" href="../1.html"></a>
+      <div class="title-bar">
+        <ul id="title-text-menu">
+          <script src="../MainMenu.js" type="text/javascript"></script>
+          <script type="text/javascript">
+            var mSelect = 5;
+            for(var i = 0; i < menuList.length; i++)
+            {
+              if(mSelect == i)
+                document.write('<li><a style="color:black; background:White; text-decoration:none" href="../'+menuLink[i]+'">'+menuList[i]+'</a></li>');
+              else
+                document.write('<li><a style="color:white; background:black; text-decoration:none" href="../'+menuLink[i]+'">'+menuList[i]+'</a></li>');
+            }
+          </script>
+        </ul>
+      </div>
+
+      <div class="sub-bar"></div>
+
+      <div class="Layout1"></div>
+
+      <ul class="Content">
+        <script type="text/javascript">
+          var smSelect = 5;
+        </script>
+        <script src= "./SubMenu.js" type="text/javascript"></script>
+      </ul>
+
+      <div class="Layout2">
+        <div style="white-space:nowrap">
+          <div class="Text-title">
+            <script type="text/javascript">
+              document.write(subList[smSelect]);
+            </script>
+          </div>
+          <p><div class="cred" style="font-size: 25px">형변환</div>
+          형변환 이란 데이터 형식을 바꾼다는 뜻입니다.<br>
+          예를 들어서 int형 데이터를 double형 으로 바꾼다던가 말이죠.</p>
+<div class="sourcebox"><pre><code class="lang c#">sbyte _byte = 127;
+double b;
+int a = 1234;
+
+Console.WriteLine($"{a}");
+
+b = (double)a;
+
+Console.WriteLine($"{b}");</code></pre></div>
+          <p>형변환은 하는 방법은 매우 쉽습니다 "( )" 사이에 어떤 데이터의 형으로 바꿀 건지 적어주면 됩니다.<br>
+          그리고 위의 상황은 거의 없는 일이긴 하죠. 정수에서 실수로 바꿀 이유가 많지는 않습니다.</p>
+          <p><div class="cred" style="font-size: 25px">정수 형식 형변환</div>
+          이 형변환은 매우 유용하게 쓰일수도 있습니다.<br>
+          하지만 한가지 주의할 점이 있죠.<br>
+          그건 데이터의 크기가 맞지 않으면 오버플로우가 발생하는겁니다.</p>
+<div class="sourcebox"><pre><code class="lang c#">sbyte _byte = 127;
+int _int = (int)_byte;
+
+_int++;
+
+_byte = (sbyte)_int;
+
+Console.WriteLine($"{_byte}");</code></pre></div><br>
+          <img src="./6/image01.png" alt="C# 형변환">
+          <p>결과는 오버플로우가 발생합니다.<br>
+          이러한 경우 원치 않는 값이 나오기에 오류의 발생 원인이 됩니다.<br>
+          형변환을 할 때 데이터의 값이 오버플로우가 될지 언더플로우가 될지 꼭 확인하고 변환을 해줘야 합니다.<br><br>
+          <strong>데이터의 형변환시 변환될 데이터의 값의 범위가 넘어가면 오버플로우, 언더플로우가 발생 할 수 있다.</strong></p>
+          <p><div class="cred" style="font-size: 25px">실수 형식 형변환</div>
+          실수를 나타내는 자료형은 float, double, decimal 3가지가 있습니다.<br>
+          실수는 정수에서 일어나는 오버플로우와 언더플로우의 문제가 일어나지 않습니다.<br>
+          여기까진 와 정말 좋네요 라는 말이 나오는데 사실 다른 문제가 존재하죠. 바로 정밀성이 떨어집니다.<br><br>
+          float나 double은 소수를 2진수로 메모리에 저장이되고<br>
+          저장된 값을 다른 형식으로 변환하려면 10진수로 변환후 2진수로 다시 변환해서 저장해야합니다. 이때 이진수로 표현하는 소수는 완전하지 않아서<br>
+          변환 과정에서 데이터의 손실이 발생해 정밀성이 떨어집니다.<br><br>
+
+          <strong>간단하게 말해서 변환 과정 때문에 데이터가 손실해서 정밀성이 떨어짐.</strong></p>
+<div class="sourcebox"><pre><code class="lang c#">float _float = 69.6875f;
+double _double = (double)_float;
+
+Console.WriteLine("float {0}, double {1}", _float, _double);
+
+Console.WriteLine("69.6875 == _double : {0}", 69.6875 == _double);
+
+_float = 3.141519f;
+_double = (double)_float;
+
+Console.WriteLine("3.141519 == _double : {0}", 3.141519 == _double);</code></pre></div><br>
+          <img src="./6/image02.png" alt="C# 형변환"><br>
+          <p>이 처럼 정밀성이 떨어집니다.<br>
+          그냥 double = 3.141519를 정의해주면 그대로 나오지만<br>
+          형변환을 이용해서 3.141519를 넘겨주면 정밀성이 떨어져 저렇게 길게 나옵니다.<br><br>
+          그리고 실수 형식을 정수 형식으로 변환을 해주면 소수점을 다 버립니다.<br>
+          0.9를 정수로 변환하면 0으로 변환된다는 뜻이죠.<br><br>
+          <strong>변환 과정 때문에 데이터가 손실해서 정밀성이 떨어짐, 실수 형식을 정수 형식으로 변환할 때 소수점을 다 버림</strong></p>
+          <p><div class="cred" style="font-size: 25px">문자열 형변환</div>
+          문자열의 형변환 C++ 에서 string을 사용하신 분이라면 아실텐데요. 형변환을 할려고 (string)따위를 해도 안됩니다.<br>
+          물론 C++ 은 string이 자료형이 아니고 클래스로 분류되서 그렇기도 하지만 C# 은 string이 자료형인데 못하죠.<br>
+          C++ 에선 함수로 변경을 했었는데요. C# 도 같습니다. 함수와 같은 개념인 메소드를 이용해서 말이죠.<br><br>
+          사용하는 메소드는 총 2개입니다.<br>
+          숫자를 문자열로 Tosting()<br>
+          문자열을 숫자로 Parse()</p>
+<div class="sourcebox"><pre><code class="lang c#">int _int = 1234;
+string _string;
+
+_string = _int.ToString();
+
+Console.WriteLine("{0}, {0}", _int, _string);
+
+int _int2 = int.Parse(_string);
+
+Console.WriteLine("{0}, {0}", _int2, _string);</code></pre></div><br>
+          <img src="./6/image03.png" alt="C# 형변환">
+        </div>
+      </div>
+    </div>
+    <div class="ending">
+    BLACKPAGE<br>
+    by coding black_ping<br>
+    email - bug_ping@naver.com
+    </div>
+  </body>
+
+</html>

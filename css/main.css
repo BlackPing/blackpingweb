@@ -1,0 +1,86 @@
+#logo
+{
+  background-image : url('../image/logo.png');
+  background-repeat: no-repeat;
+  border : 3px solid black;
+  border-radius : 5px;
+  box-shadow : 0 0 10px gray;
+  width: 187px;
+  height : 205px;
+}
+
+#title-text-menu
+{
+  list-style: none;
+}
+
+.tcenter
+{
+  text-align: center;
+}
+
+.tright
+{
+  text-align: right;
+}
+
+.tleft
+{
+  text-align: left;
+}
+
+.title-bar
+{
+  width: 1130px;
+  height: 60px;
+  background: black;
+  margin: 150px 0px 0px 210px;
+  position:absolute;
+}
+
+.title-bar li
+{
+  font-family: 'Anton', sans-serif;
+}
+
+.sub-bar
+{
+  width: 10px;
+  height: 250px;
+  background: black;
+  margin: 0px 0px 0px 200px;
+  position:absolute;
+}
+
+.ending
+{
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+
+  color: rgb(0, 0, 0, 0.8);
+
+  margin-bottom: 50px;
+}
+
+.BASENAME
+{
+  float:right;
+  border-bottom: 5px solid black;
+  margin-left: 210px;
+  padding: 20px 0px 0px 0px;
+}
+
+.MIDNAME
+{
+  margin-left: 210px;
+
+  font-size: 10px;
+  color: rgb(0, 0, 0, 0.5);
+}
+
+li
+{
+  padding-left: 30px;
+  font-size: 25px;
+  float:left;
+}
